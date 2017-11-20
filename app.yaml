@@ -1,0 +1,18 @@
+runtime: php
+env: flex
+
+runtime_config:
+  document_root: web
+  front_controller_file: app.php
+
+env_variables:
+  ## Set these environment variables according to your CloudSQL configuration.
+  DB_DATABASE: symfony
+  DB_USERNAME: root
+  DB_PASSWORD: YOUR_DB_PASSWORD
+  DB_SOCKET: "/cloudsql/YOUR_CLOUDSQL_CONNECTION_NAME"
+
+beta_settings:
+  # for Cloud SQL, set this value to the Cloud SQL connection name,
+  # e.g. "project:region:cloudsql-instance"
+  cloud_sql_instances: "YOUR_CLOUDSQL_CONNECTION_NAME"

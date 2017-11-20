@@ -1,0 +1,21 @@
+# This file has been modified for connecting to Google Cloud SQL
+parameters:
+    database_host: '%env(DB_HOST)%'
+    database_name: '%env(DB_DATABASE)%'
+    database_port: '%env(DB_PORT)%'
+    database_user: '%env(DB_USERNAME)%'
+    database_password: '%env(DB_PASSWORD)%'
+    database_socket: '%env(DB_SOCKET)%'
+
+    # Set environment variable defaults.
+    env(DB_HOST): ""
+    env(DB_PORT): 3306
+    env(DB_SOCKET): ""
+
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: ~
+    mailer_password: ~
+
+    # A secret key that's used to generate certain security-related tokens
+    secret: ThisTokenIsNotSoSecretChangeIt

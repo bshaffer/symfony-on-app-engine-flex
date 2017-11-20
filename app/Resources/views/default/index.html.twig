@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <div id="welcome">
+                <h1>Doctrine on App Engine Flexible</h1>
+            </div>
+
+            <div id="next">
+                <h2>Products:</h2>
+                <ul>
+                {% for product in products %}
+                    <li><a href="{{ path('product_show', {productId: product.id }) }}">{{ product.name }}</a></li>
+                {% else %}
+                    <li><i>No products yet</i></li>
+                {% endfor %}
+                </ul>
+
+                <h2> Create a Product</h2>
+                <form method="POST" action="{{ path('product_create') }}">
+                    <p><input type="text" name="name" placeholder="product name" /></p>
+                    <p><input type="text" name="price" placeholder="price" /></p>
+                    <p><textarea name="description" placeholder="description"></textarea></p>
+                    <input type="submit" value="Create a product" />
+                </form>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

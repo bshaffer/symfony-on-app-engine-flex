@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <div id="product">
+                <h1>Product: {{ product.name }}</h1>
+                <ul>
+                    <li><strong>Price: </strong> ${{ product.price }}</li>
+                    <li><strong>Description: </strong> {{ product.description }}</li>
+                </ul>
+                <a href="{{ path('homepage') }}">Back</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
